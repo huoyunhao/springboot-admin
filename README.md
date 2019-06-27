@@ -90,7 +90,8 @@ springboot-admin是基于`springboot2.0.1` 前端采用`vue-element-admin`组件
 
 ## 5 项目说明
 
-[spring-boot-admin脚手架权限控制拦截器](https://www.jianshu.com/p/d95e4ea1106c)
+[spring-boot-admin脚手架权限控制拦截器](https://www.jianshu.com/p/404cf30ae80d)
+
 [spring-boot-admin 项目启动说明](https://www.jianshu.com/p/78d7ad7dcc2c)
 
 ------
@@ -100,9 +101,7 @@ springboot-admin是基于`springboot2.0.1` 前端采用`vue-element-admin`组件
 [后端地址](https://github.com/ayhyh/springboot-admin)
 [前端地址](https://github.com/ayhyh/springboot-admin-ui)
 前端登录账号：admin 密码 123456
-
 数据库sql文件：hyh\admin\src\main\resources\db\loop_admin_v1.sql
-
 ------
 
 
