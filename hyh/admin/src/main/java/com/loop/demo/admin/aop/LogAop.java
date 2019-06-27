@@ -15,11 +15,6 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
 
-/**
- * @Auther: 霍运浩
- * @Date: 2019/2/27 0027 16:22
- * @Description:
- */
 @Aspect
 @Component
 public class LogAop {
@@ -43,7 +38,6 @@ public class LogAop {
      */
     @Before("webLog()")
     public void doBefore(JoinPoint joinPoint){
-        System.out.println("我是前置通知!!!");
         //获取目标方法的参数信息
         Object[] obj = joinPoint.getArgs();
         Signature signature = joinPoint.getSignature();

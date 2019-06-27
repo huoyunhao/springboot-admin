@@ -176,6 +176,7 @@ public class ReflectionUtils {
 		for (Class<?> superClass = obj.getClass(); superClass != Object.class; superClass = superClass.getSuperclass()) {
 			try {
 				Field field = superClass.getDeclaredField(fieldName);
+//				getDeclaredFields()：获得某个类的所有声明的字段，即包括public、private和proteced，但是不包括父类的申明字段
 				makeAccessible(field);
 				return field;
 			} catch (NoSuchFieldException e) {//NOSONAR
@@ -345,4 +346,5 @@ public class ReflectionUtils {
 		return true;
 
 	}
+
 }

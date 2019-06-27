@@ -11,14 +11,14 @@ spring:
     default-property-inclusion: non_null
   redis:
     database: 2
-    host: ${REDIS_HOST:127.0.0.1}
+    host: ${REDIS_HOST:localhost}
     password:
     port: ${REDIS_PORT:6379}
     pool:
     max-active: 20
   datasource:
 #    name: test
-    url: jdbc:mysql://${MYSQL_HOST:127.0.0.1}:${MYSQL_PORT:3306}/loop_admin_v1?useUnicode=true&characterEncoding=UTF8
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/loop_admin_v1?useUnicode=true&characterEncoding=UTF8
 #    url: jdbc:mysql://${MYSQL_HOST:120.79.250.60}:${MYSQL_PORT:3306}/loop_admin?useUnicode=true&characterEncoding=UTF8
     username: root
     password: 123456
@@ -70,3 +70,4 @@ jwt:
 url:
   ignore:
     startWith: /jwt
+

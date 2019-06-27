@@ -2,9 +2,6 @@ package com.loop.demo.common.msg;
 
 import java.util.List;
 
-/**
- *
- */
 public class TableResultResponse<T> extends BaseResponse {
 
     TableData<T> data;

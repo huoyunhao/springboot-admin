@@ -51,7 +51,7 @@ public class BaseBiz<M extends Mapper<T>, T> {
 
 
     public void insert(T entity) {
-        EntityUtils.setCreatAndUpdatInfo(entity);
+        EntityUtils.setCreatAndUpdatInfo(entity);//设置更新属性
         mapper.insert(entity);
     }
 

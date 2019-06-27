@@ -30,6 +30,7 @@ public class EntityUtils {
 	public static <T> void setCreatAndUpdatInfo(T entity) {
 		setCreateInfo(entity);
 		setUpdatedInfo(entity);
+		BaseContextHandler.remove();//清除线程变量
 	}
 	
 	/**

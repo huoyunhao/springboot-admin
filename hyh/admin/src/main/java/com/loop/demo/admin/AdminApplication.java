@@ -9,8 +9,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 @MapperScan("com.loop.demo.admin.mapper")
 @SpringBootApplication
-@EnableCaching  //开启缓存
-
 public class AdminApplication {
 
     public static void main(String[] args) {

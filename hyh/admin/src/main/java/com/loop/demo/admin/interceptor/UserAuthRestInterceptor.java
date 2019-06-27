@@ -64,6 +64,7 @@ public class UserAuthRestInterceptor extends HandlerInterceptorAdapter {
                 return super.preHandle(request, response, handler);
             }
         }
+
         //获取请求的uri
         String requestUri = request.getRequestURI();
         //获取请求的方式
@@ -82,17 +83,17 @@ public class UserAuthRestInterceptor extends HandlerInterceptorAdapter {
             infoFromToken = jwtTokenUtil.getInfoFromToken(token);
 
         }catch (Exception e){
-            response.setCharacterEncoding("UTF-8");
-            response.setContentType("application/json; charset=utf-8");
-            response.setStatus(403);
-            PrintWriter out = null ;
-            try{
-                JSONObject res = new JSONObject();
-                res.put("status","403");
-                res.put("msg","token异常");
-                out = response.getWriter();
-                out.append(res.toString());
-                return false;
+                response.setCharacterEncoding("UTF-8");
+                response.setContentType("application/json; charset=utf-8");
+                response.setStatus(403);
+                PrintWriter out = null ;
+                try{
+                    JSONObject res = new JSONObject();
+                    res.put("status","403");
+                    res.put("msg","token异常");
+                    out = response.getWriter();
+                    out.append(res.toString());
+                    return false;
             }catch (Exception e2){
                 return false;
             }
@@ -104,7 +105,6 @@ public class UserAuthRestInterceptor extends HandlerInterceptorAdapter {
         Collection<PermissionInfo> result =this.getPermissionInfos(permissionIfs, requestUri, method);
         //如果result.size() ==0 则说明 不属于管控的 直接放行
         if(result.size()>0){
-
             //根据用户的id获取该用户所拥护的权限
             List<PermissionInfo> permissionInfos = permissionService.getPermissionByUsername(infoFromToken.getUniqueName());
                 //判断该用户所访问的url，该用户是否用户此权限
@@ -121,9 +121,6 @@ public class UserAuthRestInterceptor extends HandlerInterceptorAdapter {
         }
 //        不属于管控的url 直接放行
         return super.preHandle(request, response, handler);
-
-
-
     }
 
     /**

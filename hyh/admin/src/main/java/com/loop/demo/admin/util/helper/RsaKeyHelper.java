@@ -165,7 +165,7 @@ public class RsaKeyHelper {
         SecureRandom secureRandom = new SecureRandom("123".getBytes());
         keyPairGenerator.initialize(1024, secureRandom);
         KeyPair keyPair = keyPairGenerator.genKeyPair();
-        System.out.println(keyPair.getPublic().getEncoded());
+        System.out.println(keyPair.getPublic().getEncoded().toString());
     }
 
 }
