@@ -11,20 +11,20 @@ spring:
     default-property-inclusion: non_null
   redis:
     database: 2
-    host: ${REDIS_HOST:localhost}
+    host: ${REDIS_HOST:192.168.31.241}
     password:
     port: ${REDIS_PORT:6379}
     pool:
     max-active: 20
   datasource:
 #    name: test
-    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/loop_admin_v1?useUnicode=true&characterEncoding=UTF8
+    url: jdbc:mysql://${MYSQL_HOST:192.168.31.241}:${MYSQL_PORT:3306}/loop_admin_v1?useUnicode=true&characterEncoding=UTF8
 #    url: jdbc:mysql://${MYSQL_HOST:120.79.250.60}:${MYSQL_PORT:3306}/loop_admin?useUnicode=true&characterEncoding=UTF8
     username: root
-    password: 123456
+    password: 5601564a
     #阿里巴巴数据库连接池
     type: com.alibaba.druid.pool.DruidDataSource
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     filters: stat
     maxActive: 20
     initialSize: 1

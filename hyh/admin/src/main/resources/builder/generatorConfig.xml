@@ -17,8 +17,8 @@
             <property name="caseSensitive" value="true"/>
         </plugin>
 
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/ag_auth?useUnicode=true&amp;characterEncoding=UTF8"
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://192.168.31.241:3306/ag_auth?useUnicode=true&amp;characterEncoding=UTF8"
                         userId="root"
                         password="123456">
         </jdbcConnection>

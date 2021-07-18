@@ -1,7 +1,9 @@
 package com.loop.demo.admin.util.helper;
 
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
+import java.util.Base64;
+import java.util.Base64.Decoder;
+import java.util.Base64.Encoder;
+
 
 import java.io.DataInputStream;
 import java.io.FileOutputStream;
@@ -153,11 +155,15 @@ public class RsaKeyHelper {
     }
 
     public static String toHexString(byte[] b) {
-        return (new BASE64Encoder()).encodeBuffer(b);
+        Encoder encoder = Base64.getEncoder();
+        return encoder.encodeToString(b);
     }
 
     public static final byte[] toBytes(String s) throws IOException {
-        return (new BASE64Decoder()).decodeBuffer(s);
+        Decoder decoder = Base64.getDecoder();
+        byte[] buffer = decoder.decode(s);
+
+        return buffer;
     }
 
     public static void main(String[] args) throws NoSuchAlgorithmException {
